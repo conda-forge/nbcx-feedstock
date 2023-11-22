@@ -1,5 +1,5 @@
 {% set name = "nbcx" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d2ecdf7ec47f952c4ae73d74e9c5407a773ba403d83746f9eadeaeb136a834c7
+  sha256: 61a5cb63fdfb53cc30326d91a3b2047612c4dcb16bb871bb9b62e8c6cf36a47f
 
 build:
   number: 0
