@@ -1,5 +1,5 @@
 {% set name = "nbcx" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61a5cb63fdfb53cc30326d91a3b2047612c4dcb16bb871bb9b62e8c6cf36a47f
+  sha256: 31009056852c5d2621cfa656f9582cb7ed8dc4855a1e8d68b4b86e16588515af
 
 build:
   number: 0
@@ -31,6 +31,7 @@ requirements:
     - nbformat
     - notebook
     - omegaconf
+    - packaging
     - pydantic
 
 test:
