@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 31009056852c5d2621cfa656f9582cb7ed8dc4855a1e8d68b4b86e16588515af
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - nodejs
     - yarn
@@ -24,7 +24,7 @@ requirements:
     - hatch-jupyter-builder
     - jupyterlab >=4,<5
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - dominate
     - ipywidgets
     - ipython
@@ -35,6 +35,8 @@ requirements:
     - pydantic
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - nbcx
 
